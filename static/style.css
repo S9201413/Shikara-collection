@@ -1,5 +1,21 @@
 /* 1. BRAND COLORS & TYPOGRAPHY */
 :root {
+    /* SMOOTH PAGE LOAD ANIMATION */
+body {
+    animation: fadePageIn 0.6s ease-out forwards;
+    opacity: 0; /* Starts hidden, animation reveals it */
+}
+
+@keyframes fadePageIn {
+    0% {
+        opacity: 0;
+        transform: translateY(15px); /* Starts slightly lower */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Slides into place perfectly */
+    }
+}
     --navy: #0d111d; 
     --gold: #c5a059; 
     --bg-color: #ffffff;
