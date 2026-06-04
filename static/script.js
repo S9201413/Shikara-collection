@@ -33,7 +33,7 @@ Papa.parse("./catalog.csv", {
                 <div class="image-container">
                     <img src="./static/${item.Image}" alt="${item.Item}" class="product-image">
                     <div class="quick-view">
-                        <a href="https://wa.me/910000000000?text=Hi Shikara! I am interested in the ${item.Item} (Size: ${item.Size})." target="_blank">Inquire Now</a>
+                        <a href="https://wa.me/917278371959?text=Hi Shikara! I am interested in the ${item.Item} (Size: ${item.Size})." target="_blank">Inquire Now</a>
                     </div>
                 </div>
                 <div class="product-info">
