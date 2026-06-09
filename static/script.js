@@ -1,64 +1,77 @@
-// 1. Read the URL to see if a specific category was requested
-const urlParams = new URLSearchParams(window.location.search);
-const targetCategory = urlParams.get('category') || 'All';
-
-// 2. Fetch and Parse the CSV Database
+// Universal Shikara Engine
 Papa.parse("./catalog.csv", {
     download: true,
     header: true,
     complete: function(results) {
-        // Remove any empty rows from the spreadsheet
-        let products = results.data.filter(item => item.Item); 
-        const container = document.getElementById('catalog-container');
+        // Filter out empty rows
+        const products = results.data.filter(item => item.Item); 
         
-        // Stop the script if the container is missing
-        if (!container) return; 
+        // --- JOB 1: BUILD THE GRID (Homepage & Shop Page) ---
+        const gridContainer = document.getElementById('catalog-container');
+        if (gridContainer) {
+            const limit = gridContainer.getAttribute('data-limit');
+            let displayProducts = limit ? products.slice(0, parseInt(limit)) : products;
 
-        // 3. Filter the products based on the URL (e.g., ?category=Men)
-        if (targetCategory !== 'All') {
-            products = products.filter(item => item.Category.toLowerCase() === targetCategory.toLowerCase());
-        }
-
-        // 4. Check if the page requested a limit (for the homepage)
-        const limit = container.getAttribute('data-limit');
-        if (limit) {
-            products = products.slice(0, parseInt(limit));
-        }
-
-        // 5. Build the HTML
-        let html = '';
-        products.forEach(item => {
-            html += `
-            <div class="product-card">
-                <div class="image-container">
-                    <img src="./static/${item.Image}" alt="${item.Item}" class="product-image">
-                    <div class="quick-view">
-                        <a href="https://wa.me/910000000000?text=Hi Shikara! I am interested in the ${item.Item} (Size: ${item.Size})." target="_blank">Inquire Now</a>
+            let html = '';
+            displayProducts.forEach(item => {
+                // Notice the link now points to product.html?id=M001
+                html += `
+                <div class="product-card">
+                    <div class="image-container">
+                        <a href="product.html?id=${item.ID}">
+                            <img src="./static/${item.Image}" alt="${item.Item}" class="product-image">
+                        </a>
+                        <div class="quick-view">
+                            <a href="product.html?id=${item.ID}">View Details</a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>${item.Item}</h3>
+                        <div class="price">₹${item.Price}</div>
                     </div>
                 </div>
-                <div class="product-info">
-                    <div class="category">${item.Category}</div>
-                    <h3>${item.Item}</h3>
-                    <div class="price">₹${item.Price}</div>
-                    <div class="size">Size: ${item.Size}</div>
-                </div>
-            </div>
-            `;
-        });
-        
-        // Inject the products into the grid
-        container.innerHTML = html;
-        
-        // HIDE THE LOADER ONCE PRODUCTS ARE INJECTED
+                `;
+            });
+            gridContainer.innerHTML = html;
+        }
+
+        // --- JOB 2: BUILD THE SINGLE PRODUCT PAGE ---
+        const detailContainer = document.getElementById('product-detail-container');
+        if (detailContainer) {
+            // Read the ID from the URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const targetId = urlParams.get('id');
+
+            // Find the exact product in the database
+            const product = products.find(item => item.ID === targetId);
+
+            if (product) {
+                // Build the single product layout
+                detailContainer.innerHTML = `
+                    <div class="product-detail-layout">
+                        <div class="detail-image-box">
+                            <img src="./static/${product.Image}" alt="${product.Item}" class="full-size-image">
+                        </div>
+                        <div class="detail-info-box">
+                            <h1>${product.Item}</h1>
+                            <div class="detail-price">₹${product.Price}</div>
+                            <p class="detail-description">${product.Description}</p>
+                            <div class="detail-sizes">Available Sizes: <strong>${product.Size}</strong></div>
+                            
+                            <a href="https://wa.me/910000000000?text=Hi Shikara! I want to buy the ${product.Item} (ID: ${product.ID})." 
+                               class="buy-now-btn" target="_blank">
+                               Buy via WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                `;
+            } else {
+                detailContainer.innerHTML = `<h2>Product not found.</h2>`;
+            }
+        }
+
+        // Hide loader globally
         const loader = document.getElementById('loader-container');
-        if (loader) {
-            loader.style.display = 'none';
-        }
-        
-        // 6. Update the page title dynamically if on a category page
-        const pageTitle = document.getElementById('dynamic-title');
-        if (pageTitle && targetCategory !== 'All') {
-            pageTitle.innerText = targetCategory + " Collection";
-        }
+        if (loader) loader.style.display = 'none';
     }
 });

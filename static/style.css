@@ -286,3 +286,94 @@ footer {
     100% { transform: rotate(360deg); }
 }
 
+/* 7. SINGLE PRODUCT PAGE DETAILS */
+.detail-wrapper {
+    max-width: 1200px;
+    margin: 60px auto 100px auto;
+    padding: 0 5%;
+}
+
+.product-detail-layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    align-items: flex-start;
+}
+
+.detail-image-box {
+    flex: 1;
+    min-width: 300px; /* Ensures it doesn't get too small on mobile */
+    background-color: #f8f9fa; /* Matches the grid background */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.full-size-image {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: contain;
+    display: block;
+}
+
+.detail-info-box {
+    flex: 1;
+    min-width: 300px;
+    padding-top: 20px;
+}
+
+.detail-info-box h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5em;
+    margin: 0 0 15px 0;
+    font-weight: 400;
+}
+
+.detail-price {
+    font-size: 1.5em;
+    font-weight: 500;
+    color: var(--gold);
+    margin-bottom: 25px;
+}
+
+.detail-description {
+    font-size: 1em;
+    line-height: 1.8;
+    color: var(--text-muted);
+    margin-bottom: 30px;
+}
+
+.detail-sizes {
+    font-size: 0.95em;
+    margin-bottom: 40px;
+    padding: 15px;
+    background-color: #fcfcfc;
+    border: 1px solid #eee;
+    display: inline-block;
+}
+
+.buy-now-btn {
+    display: inline-block;
+    background-color: var(--navy);
+    color: white;
+    padding: 18px 40px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.buy-now-btn:hover {
+    background-color: var(--gold);
+}
+
+/* Mobile Responsiveness adjustments */
+@media (max-width: 768px) {
+    .product-detail-layout {
+        gap: 30px;
+    }
+    .detail-info-box h1 {
+        font-size: 2em;
+    }
+}
+
