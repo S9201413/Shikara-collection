@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shikara | Couple Coordinated Ethnic Wear</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Standard file link for GitHub Pages -->
+    <link rel="stylesheet" href="./static/style.css">
+    
+    <!-- PapaParse Library to read the CSV file -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+</head>
+<body>
+
+    <header>
+        <a href="index.html"><img src="./static/logo.jpg" alt="Shikara Logo" class="logo-img"></a>
+        <div class="nav-links">
+            <!-- These now link to the new shop page with a URL parameter -->
+            <a href="shop.html?category=Men">Men</a>
+            <a href="shop.html?category=Women">Women</a>
+            <a href="shop.html?category=Couples">Couples</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>The Shikara Collection</h1>
+        <p>Curated aesthetics for the modern couple.</p>
+        <a href="#shop" class="shop-btn">Explore</a>
+    </section>
+
+    <div class="collection-header" id="shop">
+        <h2 class="collection-title">Latest Arrivals</h2>
+        <div class="divider"></div>
+    </div>
+    
+    <!-- Notice the data-limit="3". This tells JS to only show the first 3 rows of your CSV -->
+    <div class="catalog-grid" id="catalog-container" data-limit="3"></div>
+
+    <!-- The View All Button -->
+    <div class="view-all-container">
+        <a href="shop.html?category=All" class="view-all-btn">View Full Collection</a>
+    </div>
+
+    <!-- THE FOOTER MUST GO HERE (Below the catalog container) -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h2>SHIKARA</h2>
+                <p>Curated aesthetics for the modern couple. Designed with passion, crafted for celebrations.</p>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <a href="#" onclick="filterCategory('All'); return false;">Shop All</a>
+                <a href="#" onclick="filterCategory('Men'); return false;">Men's Collection</a>
+                <a href="#" onclick="filterCategory('Women'); return false;">Women's Collection</a>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p>Email: hello@shikara.com</p>
+                <p>WhatsApp: +91 00000 00000</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Shikara Collection. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- THE JAVASCRIPT MUST GO HERE (Right above the closing body tag) -->
+    <script src="./static/script.js"></script>
+</body>
+</html>
