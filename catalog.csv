@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 Item,Category,Price,Size,Image
 Saffron Kurta,Men,4800,XXL,product1.jpg
 Emerald Silk Sari,Women,12000,L,product2.jpg
@@ -24,35 +22,3 @@ Embroidered Kurta,Men,5200,L,product2.jpg
 Pearl Accent Necklace,Women,4300,M,product1.jpg
 Kids Mini Kurta,Couples,900,XS,product2.jpg
 Monochrome Bomber Jacket,Men,3600,M,product1.jpg
-=======
-=======
->>>>>>> 1909f8616197eb91ed833c265b0f0749fe0fe608
-Item,Category,Price,Size,Image
-Saffron Kurta,Men,4800,XXL,product1.jpg
-Emerald Silk Sari,Women,12000,L,product2.jpg
-Linen Blazer,Men,6500,M,product1.jpg
-Casual Cotton Tee,Men,900,XL,product2.jpg
-Couple Hoodie Set,Couples,3200,L,product1.jpg
-Evening Velvet Gown,Women,15000,XL,product2.jpg
-Denim Rider Jacket,Women,3000,M,product1.jpg
-Classic White Shirt,Men,2200,L,product2.jpg
-Festive Sherwani,Men,9500,XXL,product1.jpg
-Floral Summer Dress,Women,2800,S,product2.jpg
-Tailored Two-Piece Suit,Men,11000,L,product1.jpg
-Chiffon Printed Scarf,Women,600,Free,product2.jpg
-Velvet Overcoat,Couples,7200,XL,product1.jpg
-Garden Print Kurta,Men,3500,M,product2.jpg
-Brocade Lehenga,Couples,18000,L,product1.jpg
-Boho Crop Top,Women,1400,S,product2.jpg
-Formal Trousers,Men,2700,L,product1.jpg
-Silk-Blend Saree,Women,9800,M,product2.jpg
-Summer Linen Shorts,Couples,1200,M,product1.jpg
-Embroidered Kurta,Men,5200,L,product2.jpg
-Pearl Accent Necklace,Women,4300,M,product1.jpg
-Kids Mini Kurta,Couples,900,XS,product2.jpg
-Monochrome Bomber Jacket,Men,3600,M,product1.jpg
-<<<<<<< HEAD
->>>>>>> 627e7ae (Switching architecture to static JavaScript catalog)
-=======
->>>>>>> 1909f8616197eb91ed833c265b0f0749fe0fe608
-Pastel Party Dress,Women,2600,S,product2.jpg
