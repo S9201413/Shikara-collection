@@ -524,5 +524,34 @@ footer {
 }
 .view-all-btn:hover {
     background-color: var(--gold);
+<<<<<<< HEAD
 >>>>>>> 627e7ae (Switching architecture to static JavaScript catalog)
 }
+=======
+}
+
+/* 6. LOADING STATE */
+#loader-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(13, 17, 29, 0.1); /* Faded navy background ring */
+    border-top: 3px solid var(--gold); /* Solid gold spinning top edge */
+    border-radius: 50%; /* Turns the square border into a perfect circle */
+    animation: spin 1s linear infinite; /* Tells the circle to rotate */
+}
+
+/* The math for the rotation animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+>>>>>>> 1909f86 (loader indefinite)
