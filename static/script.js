@@ -46,7 +46,14 @@ Papa.parse("./catalog.csv", {
             `;
         });
         
+        // Inject the products into the grid
         container.innerHTML = html;
+        
+        // HIDE THE LOADER ONCE PRODUCTS ARE INJECTED
+        const loader = document.getElementById('loader-container');
+        if (loader) {
+            loader.style.display = 'none';
+        }
         
         // 6. Update the page title dynamically if on a category page
         const pageTitle = document.getElementById('dynamic-title');
