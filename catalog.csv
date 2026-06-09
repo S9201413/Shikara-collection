@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 Item,Category,Price,Size,Image
 Saffron Kurta,Men,4800,XXL,product1.jpg
 Emerald Silk Sari,Women,12000,L,product2.jpg
@@ -24,6 +25,8 @@ Pearl Accent Necklace,Women,4300,M,product1.jpg
 Kids Mini Kurta,Couples,900,XS,product2.jpg
 Monochrome Bomber Jacket,Men,3600,M,product1.jpg
 =======
+=======
+>>>>>>> 1909f8616197eb91ed833c265b0f0749fe0fe608
 Item,Category,Price,Size,Image
 Saffron Kurta,Men,4800,XXL,product1.jpg
 Emerald Silk Sari,Women,12000,L,product2.jpg
@@ -48,5 +51,8 @@ Embroidered Kurta,Men,5200,L,product2.jpg
 Pearl Accent Necklace,Women,4300,M,product1.jpg
 Kids Mini Kurta,Couples,900,XS,product2.jpg
 Monochrome Bomber Jacket,Men,3600,M,product1.jpg
+<<<<<<< HEAD
 >>>>>>> 627e7ae (Switching architecture to static JavaScript catalog)
+=======
+>>>>>>> 1909f8616197eb91ed833c265b0f0749fe0fe608
 Pastel Party Dress,Women,2600,S,product2.jpg
