@@ -37,33 +37,33 @@ Papa.parse('./catalog.csv', {
 
             // 5. Build the HTML
             let html = '';
-            products.forEach(item => {
-                const img = item.Image ? `./static/${item.Image}` : './static/product1.jpg';
-                const phone = '910000000000'; // replace with real number if needed
-                const safeItem = item.Item || 'Product';
-                const safeSize = item.Size || 'One size';
-                const safeCategory = item.Category || '';
-                const safePrice = item.Price || '';
-
-                html += `
+        products.forEach(item => {
+            html += `
             <div class="product-card">
                 <div class="image-container">
-                    <img src="${img}" alt="${safeItem}" class="product-image">
+                    <img src="./static/${item.Image}" alt="${item.Item}" class="product-image">
                     <div class="quick-view">
-                        <a href="https://wa.me/${phone}?text=${encodeURIComponent(`Hi Shikara! I am interested in the ${safeItem} (Size: ${safeSize}).`)}" target="_blank" rel="noopener">Inquire Now</a>
+                        <a href="https://wa.me/910000000000?text=Hi Shikara! I am interested in the ${item.Item} (Size: ${item.Size})." target="_blank">Inquire Now</a>
                     </div>
                 </div>
                 <div class="product-info">
-                    <div class="category">${safeCategory}</div>
-                    <h3>${safeItem}</h3>
-                    <div class="price">${safePrice ? '₹' + safePrice : ''}</div>
-                    <div class="size">Size: ${safeSize}</div>
+                    <div class="category">${item.Category}</div>
+                    <h3>${item.Item}</h3>
+                    <div class="price">₹${item.Price}</div>
+                    <div class="size">Size: ${item.Size}</div>
                 </div>
             </div>
             `;
-            });
-
-            container.innerHTML = html || '<p>No products found.</p>';
+        });
+        
+        // Inject the products into the grid
+        container.innerHTML = html;
+        
+        // HIDE THE LOADER ONCE PRODUCTS ARE INJECTED
+        const loader = document.getElementById('loader-container');
+        if (loader) {
+            loader.style.display = 'none';
+        }
 
             // 6. Update the page title dynamically if on a category page
             const pageTitle = document.getElementById('dynamic-title');
