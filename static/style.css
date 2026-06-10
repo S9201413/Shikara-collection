@@ -4,24 +4,25 @@ html {
 }
 
 :root {
-    --navy: #0d111d; 
-    --gold: #c5a059; 
-    --bg-color: #ffffff;
-    --text-muted: #777777;
+    /* The New Premium Copper & Cream Palette */
+    --cream-bg: #F8F6F0; /* Perfectly matches your logo's background */
+    --charcoal: #2A2825; /* A deep, rich espresso/charcoal for text */
+    --copper: #B8735C;   /* The metallic accent color from the boat */
+    --text-muted: #7A7571;
 }
 
 body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: var(--bg-color);
-    color: var(--navy);
-    -webkit-font-smoothing: antialiased; /* Makes text look sharper */
+    background-color: var(--cream-bg); /* Sets the whole site to the luxury cream */
+    color: var(--charcoal);
+    -webkit-font-smoothing: antialiased;
 }
 
 /* 2. HEADER */
 header {
-    background-color: var(--bg-color);
+    background-color: var(--cream-bg);
     padding: 15px 5%;
     display: flex;
     justify-content: space-between;
@@ -29,31 +30,38 @@ header {
     position: sticky;
     top: 0;
     z-index: 100;
-    border-bottom: 1px solid #f0f0f0;
+    /* A subtle copper border instead of grey */
+    border-bottom: 1px solid rgba(184, 115, 92, 0.2); 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03); 
 }
+
 .logo-img {
-    height: 45px;
+    height: 60px; /* Slightly larger to show off the new details */
     object-fit: contain;
+    
+    /* THE MAGIC BLEND TRICK: This makes the logo's background vanish */
+    /* mix-blend-mode: multiply; */
 }
+
 .nav-links a {
     margin-left: 30px;
     text-decoration: none;
-    color: var(--navy);
+    color: var(--charcoal); /* Dark text on the light background */
     font-size: 0.85em;
+    font-weight: 500;
     text-transform: uppercase;
-    letter-spacing: 1.5px;
-    transition: color 0.3s;
+    letter-spacing: 2px;
+    transition: color 0.3s, transform 0.3s;
 }
+
 .nav-links a:hover {
-    color: var(--gold);
+    color: var(--copper);
 }
 
 /* 3. HERO BANNER */
 .hero {
-    background-color: var(--navy);
-    background-image: linear-gradient(rgba(13, 17, 29, 0.7), rgba(13, 17, 29, 0.7)), url('/static/logo.jpg');
-    background-size: cover;
-    background-position: center;
+    background-color: var(--charcoal); /* A clean, solid dark background */
+    /* background-image has been completely removed */
     color: white;
     text-align: center;
     padding: 120px 20px;
@@ -63,13 +71,14 @@ header {
     font-size: 3.5em;
     margin: 0 0 10px 0;
     font-weight: 400;
-    color: var(--gold);
+    color: var(--copper); /* Beautiful copper title */
 }
 .hero p {
     font-size: 1em;
     letter-spacing: 2px;
     text-transform: uppercase;
     margin-bottom: 40px;
+    color: var(--cream-bg); /* Cream subtext for elegant contrast */
 }
 .shop-btn {
     background-color: transparent;
@@ -84,7 +93,7 @@ header {
 }
 .shop-btn:hover {
     background-color: white;
-    color: var(--navy);
+    color: var(--charcoal);
 }
 
 /* 4. PRODUCT GRID - THE SOJANYA LOOK */
@@ -101,7 +110,7 @@ header {
 .divider {
     width: 60px;
     height: 2px;
-    background-color: var(--gold);
+    background-color: var(--copper);
     margin: 20px auto 0 auto;
 }
 
@@ -148,7 +157,7 @@ header {
 }
 .quick-view a {
     text-decoration: none;
-    color: var(--navy);
+    color: var(--charcoal);
     font-weight: 600;
     font-size: 0.85em;
     text-transform: uppercase;
@@ -183,7 +192,7 @@ header {
 }
 /* 5. FOOTER */
 footer {
-    background-color: var(--navy);
+    background-color: var(--charcoal);
     color: white;
     padding: 60px 5% 20px 5%;
     font-family: 'Montserrat', sans-serif;
@@ -201,7 +210,7 @@ footer {
 }
 .footer-brand h2 {
     font-family: 'Playfair Display', serif;
-    color: var(--gold);
+    color: var(--copper);
     letter-spacing: 2px;
     margin-top: 0;
 }
@@ -211,7 +220,7 @@ footer {
     font-size: 0.9em;
 }
 .footer-links h3, .footer-contact h3 {
-    color: var(--gold);
+    color: var(--copper);
     font-size: 1.1em;
     margin-bottom: 20px;
     font-weight: 500;
@@ -246,7 +255,7 @@ footer {
     margin-bottom: 80px;
 }
 .view-all-btn {
-    background-color: var(--navy);
+    background-color: var(--charcoal);
     color: white;
     padding: 15px 45px;
     text-decoration: none;
@@ -257,7 +266,7 @@ footer {
     transition: background-color 0.3s;
 }
 .view-all-btn:hover {
-    background-color: var(--gold);
+    background-color: var(--copper);
 }
 
 /* 6. LOADING STATE */
@@ -273,7 +282,7 @@ footer {
     width: 40px;
     height: 40px;
     border: 3px solid rgba(13, 17, 29, 0.1); /* Faded navy background ring */
-    border-top: 3px solid var(--gold); /* Solid gold spinning top edge */
+    border-top: 3px solid var(--copper); /* Solid gold spinning top edge */
     border-radius: 50%; /* Turns the square border into a perfect circle */
     animation: spin 1s linear infinite; /* Tells the circle to rotate */
 }
@@ -323,7 +332,7 @@ footer {
     transition: border-color 0.3s;
 }
 .thumbnail:hover {
-    border-color: var(--gold);
+    border-color: var(--copper);
 }
 
 .detail-info-box {
@@ -342,7 +351,7 @@ footer {
 .detail-price {
     font-size: 1.5em;
     font-weight: 500;
-    color: var(--gold);
+    color: var(--copper);
     margin-bottom: 25px;
 }
 
@@ -364,7 +373,7 @@ footer {
 
 .buy-now-btn {
     display: inline-block;
-    background-color: var(--navy);
+    background-color: var(--charcoal);
     color: white;
     padding: 18px 40px;
     text-decoration: none;
@@ -375,7 +384,7 @@ footer {
 }
 
 .buy-now-btn:hover {
-    background-color: var(--gold);
+    background-color: var(--copper);
 }
 
 /* Mobile Responsiveness adjustments */
@@ -414,7 +423,7 @@ footer {
 .floating-share svg {
     width: 20px;
     height: 20px;
-    stroke: var(--navy);
+    stroke: var(--charcoal);
 }
 
 /* The Zoomable Container */
@@ -451,7 +460,7 @@ footer {
     transition: color 0.3s;
 }
 .lightbox-nav:hover {
-    color: var(--gold);
+    color: var(--copper);
 }
 .nav-left { left: 10px; }
 .nav-right { right: 10px; }
@@ -461,3 +470,43 @@ footer {
     .lightbox-nav { display: none; }
 }
 
+/* 9. COLOR VARIANT CIRCLES */
+.color-options {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+.color-circle {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    padding: 2px;
+    transition: border-color 0.3s, transform 0.2s;
+}
+.color-circle:hover, .color-circle.active {
+    border-color: var(--charcoal);
+    transform: scale(1.1);
+}
+
+/* Larger circles for the product detail page */
+.product-detail-colors {
+    justify-content: flex-start;
+    margin-bottom: 25px;
+}
+.product-detail-colors .color-circle {
+    width: 35px;
+    height: 35px;
+}
+.color-label {
+    font-size: 0.85em;
+    color: var(--text-muted);
+    margin-bottom: 5px;
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
