@@ -58,6 +58,32 @@ header {
     color: var(--copper);
 }
 
+/* Mobile Header Layout */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Stacks the items vertically */
+        padding: 20px 10px 15px 10px;
+    }
+    
+    .logo-img {
+        margin-bottom: 15px; /* Adds breathing room below the logo */
+        height: 55px;
+    }
+    
+    .nav-links {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap; /* Allows links to wrap safely if needed */
+        gap: 20px; /* Creates perfect, even spacing between the words */
+        width: 100%;
+    }
+    
+    .nav-links a {
+        margin-left: 0; /* Removes the heavy desktop spacing so it centers perfectly */
+        font-size: 0.75em; /* Slightly smaller text for mobile elegance */
+    }
+}
+
 /* 3. HERO BANNER */
 .hero {
     background-color: var(--charcoal); /* A clean, solid dark background */

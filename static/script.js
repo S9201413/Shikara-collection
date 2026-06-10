@@ -246,7 +246,7 @@ Papa.parse("./catalog.csv", {
                             <p class="detail-description">${product.Description}</p>
                             <div class="detail-sizes">Available Sizes: <strong>${product.Size}</strong></div>
                             
-                            <a href="https://wa.me/910000000000?text=Hi Shikara! I want to buy the ${product.Item} (ID: ${product.ID})." class="buy-now-btn" target="_blank">
+                            <a href="https://wa.me/918697430937?text=Hi Shikara! I want to buy the ${product.Item} (ID: ${product.ID})." class="buy-now-btn" target="_blank">
                                 Buy via WhatsApp
                             </a>
                         </div>
