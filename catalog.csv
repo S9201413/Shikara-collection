@@ -1,3 +1,3 @@
-ID,Item,Price,Size,Image,Description
-M001,Royal Blue Kurta Set,2499,S/M/L/XL,blue-kurta.jpg,"Premium silk blend kurta with intricate thread work. Perfect for festive occasions."
-M002,Ivory Sherwani,8999,S/M/L/XL,ivory-sherwani.jpg,"Classic ivory sherwani with gold detailing and matching churidar."
+ID,Item,Price,Size,Image1,Image2,Image3,Image4,Description
+M001,Royal Blue Kurta Set,2499,M/L/XL,blue1.jpg,blue2.jpg,blue3.jpg,,Premium silk blend kurta.with intricate thread work. Perfect for festive occasions."
+M002,Ivory Sherwani,8999,S/M/L/XL,ivory-sherwani.jpg,,,,"Classic ivory sherwani with gold detailing and matching churidar."
